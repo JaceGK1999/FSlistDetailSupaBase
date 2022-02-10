@@ -6,3 +6,9 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
+
+export async function getFoodById(id) {
+    const resp = await client.from('food').select('*').eq('id', id).single();
+
+    return checkError(resp);
+}
