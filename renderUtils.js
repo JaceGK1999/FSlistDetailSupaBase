@@ -1,12 +1,13 @@
 export function renderListItem(food) {
+    console.log(food, 'renderfood');
     const div = document.createElement('div');
     div.classList.add('food');
 
     const a = document.createElement('a');
-    a.href = `./food_page/?id=${food.id}`;
+    a.href = `./food/?id=${food.id}`;
 
     const img = document.createElement('img');
-    img.src = `./assets/${food.name}.png`;
+    img.src = `./assets/${food.food}.jpg`;
 
     const nameSpan = document.createElement('span');
     nameSpan.textContent = food.name;

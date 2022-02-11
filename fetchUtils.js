@@ -7,7 +7,7 @@ function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
 
-export async function getFoodsById() {
+export async function getAllFoods() {
     const resp = await client.from('food').select('*');
     return checkError(resp);
 }
