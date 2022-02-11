@@ -1,14 +1,16 @@
 // import functions and grab DOM elements
 import { renderListItem } from './render-utils.js';
-import { getFoodById } from './fetchUtils.js';
+import { getFoodsById } from './fetchUtils.js';
 
 const main = document.querySelector('main');
 
-for (let food of resp) {
-    getFoodById();
-    const foodDiv = renderListItem(food);
-    main.append(foodDiv);
-}
+window.addEventListener('load', async () => {
+    const foods = await getFoodsById();
+    for (let food of foods) {
+        const foodDiv = renderListItem(food);
+        main.append(foodDiv);
+    }
+});
 // let state
 
 // set event listeners
