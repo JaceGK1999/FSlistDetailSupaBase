@@ -5,11 +5,8 @@ import { getAllFoods } from './fetchUtils.js';
 // window.addEventListener('load', async () => {
 async function loadData() {
     const main = document.querySelector('main');
-    console.log('hello');
     const foods = await getAllFoods();
-    console.log(foods, 'foods');
     for (let food of foods) {
-        console.log(food, 'food');
         const foodDiv = renderListItem(food);
         main.append(foodDiv);
     }
