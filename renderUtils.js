@@ -10,7 +10,7 @@ export function renderListItem(food) {
     img.src = `./assets/${food.food}.jpg`;
 
     const nameSpan = document.createElement('span');
-    nameSpan.textContent = food.name;
+    nameSpan.textContent = food.food;
     nameSpan.classList.add('name');
 
     a.append(img, nameSpan);

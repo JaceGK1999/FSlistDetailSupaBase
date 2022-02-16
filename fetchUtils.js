@@ -13,7 +13,7 @@ export async function getAllFoods() {
 }
 
 export async function getFoodById(id) {
-    const resp = await client.from('food').select('*').eq('id', id).single();
-
+    const resp = await client.from('food').select('*').match({ id: id }).single();
+    console.log(resp, 'response');
     return checkError(resp);
 }
